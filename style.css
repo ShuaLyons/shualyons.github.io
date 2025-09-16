@@ -1,6 +1,18 @@
 #JLPortHeading{
     text-align: center;
+    color: black;
 }
 #JLPortSub{
     text-align: center;
+    color: black;
+}
+
+#JLProject1{
+    color: white;
+}
+h3{
+    color: white;
+}
+a{
+    color: black;
 }
