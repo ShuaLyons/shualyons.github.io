@@ -1,19 +1,72 @@
-#JLPortHeading{
-    text-align: center;
-    color: black;
+:root{
+    --text-color: #1a1c20;
+    --link-color: #4a76ee;
+    --background-color: #eeeff1;
+
 }
-#JLPortSub{
-    text-align: center;
-    color: black;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#JLProject1{
-    color: white;
+html{
+    scroll-behavior: smooth;
 }
-h3{
-    color: white;
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
 }
 a{
-    color: black;
+    color: var(--link-color);
     text-decoration: none;
+}
+
+nav{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    height: 80px;
+}
+
+nav .left a{
+    color: var(--text-color);
+    font-size: 22px;
+    font-weight: 600;
+
+}
+nav .right a{
+    color: var(--text-color);
+    margin: 0 10px;
+    
+    
+}
+nav .right a:last-child{
+    color: var(--background-color);
+    background-color: var(--text-color);
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+nav .right a span{
+    margin-left: 5px;
+}
+
+@media (max-width: 600px){
+    /*NAVBAR*/
+    nav{
+        padding: 0 20px;
+    }
+    nav .right a {
+        font-size: 22px;
+    }
+    nav .right a:last-child {
+        color: var(--text-color);
+        background-color: transparent;
+        padding: 0;
+    }
+    nav .right a span{
+        display: none;
+    }
 }
