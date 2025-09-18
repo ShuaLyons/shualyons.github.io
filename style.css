@@ -114,6 +114,48 @@ nav .right a span{
 
 }
 
+/*Section2: Skills*/
+.skills-section {
+    padding: 0 50px;
+    margin-bottom: 35px;
+}
+
+.skills-section h2{
+    text-align: center;
+    font-size: 35px;
+}
+.skills-section .text{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.skills-section .cells{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.skills-section .cells .cell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    width: 200px;
+    padding:10px 20px;
+    margin: 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+
+}
+.skills-section .cells .cell img{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    border-radius: 2px;
+}
+.skills-section .cells .cell span{
+    font-size: 18px;
+}
+
 @media (max-width: 600px){
     /*NAVBAR*/
     nav{
@@ -130,10 +172,19 @@ nav .right a span{
     nav .right a span{
         display: none;
     }
+    /*Section 1: Profile*/
     .ProfileSection{
         padding: 0 20px;
     }
     .ProfileSection .text h2{
         font-size: 30px;
+    }
+    /*Section2: Skills*/
+    .skills-section{
+        padding: 0 20px;
+    }
+    .skills-section .cells .cell span{
+        font-size: 16px;
+
     }
 }
