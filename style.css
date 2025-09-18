@@ -96,7 +96,9 @@ nav .right a span{
 }
 .ProfileSection .headshot img{
     width: 350px;
-    border-radius: 40%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 @media (max-width: 850px){
     /*Section1: Profile*/
@@ -112,6 +114,8 @@ nav .right a span{
     }
     .ProfileSection .headshot img{
         width: 300px;
+        height: 300px;
+        
     }
     /*Section3: Testimony*/
     .testimony-section{
@@ -296,6 +300,7 @@ footer{
         padding: 0 20px;
     }
 }
+
 footer {
     padding: 30px 50px;
     text-align: center;
@@ -305,7 +310,7 @@ footer {
     color: var(--text-color);
     font-size: 16px;
 }
-
+/*Section5: Footer*/
 footer a {
     color: var(--link-color);
     text-decoration: none;
