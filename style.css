@@ -96,7 +96,7 @@ nav .right a span{
 }
 .ProfileSection .headshot img{
     width: 350px;
-    border-radius: 50%;
+    border-radius: 40%;
 }
 @media (max-width: 850px){
     /*Section1: Profile*/
@@ -252,6 +252,9 @@ nav .right a span{
 .contact-section .group form button:hover{
     filter: brightness(.9);
 }
+footer{
+    align-items: center;
+}
 
 @media (max-width: 600px){
     /*NAVBAR*/
@@ -292,4 +295,24 @@ nav .right a span{
     .contact-section{
         padding: 0 20px;
     }
+}
+footer {
+    padding: 30px 50px;
+    text-align: center;
+    border-top: 1px solid lightgray;
+    margin-top: 50px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+footer a {
+    color: var(--link-color);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: 0.1s;
+}
+
+footer a:hover {
+    color: var(--text-color);
 }
