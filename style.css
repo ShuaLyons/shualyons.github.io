@@ -17,6 +17,8 @@ html{
 body{
     font-family: 'Poppins', sans-serif;
     background-color: var(--background-color);
+    max-width: 1400px;
+    margin: 0 auto;
 }
 a{
     color: var(--link-color);
@@ -111,6 +113,19 @@ nav .right a span{
     .ProfileSection .headshot img{
         width: 300px;
     }
+    /*Section3: Testimony*/
+    .testimony-section{
+        text-align: center;
+    }
+    .testimony-section .group{
+        flex-direction: column;
+    }
+    /*Section4: Contact*/
+    .contact-section .group{
+        flex-direction: column;
+    }
+    
+    
 
 }
 
@@ -156,6 +171,88 @@ nav .right a span{
     font-size: 18px;
 }
 
+
+
+/*Section3: Testimony*/
+.testimony-section{
+    padding: 0 50px;
+    margin-bottom: 100px;
+}
+.testimony-section h2{
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+.testimony-section .group{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.testimony-section .group .person-details{
+    text-align: center;
+    flex: 2;
+}
+.testimony-section .group .person-details img{
+    width: 200px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 50px;
+}
+.testimony-section .group .person-details p{
+    font-weight: 600;
+}
+.testimony-section .group .person-details p:last-child{
+    font-weight: normal;
+}
+.testimony-section .group .text{
+    flex: 8;
+}
+/*Section4: Contact*/
+.contact-section{
+    padding: 0 50px;
+    margin-bottom: 100px;
+}
+.contact-section h2{
+    font-size: 35px;
+}
+.contact-section .group{
+    display: flex;
+    gap: 50px;
+}
+
+.contact-section .group .text{
+    flex: 3;
+    margin-top: 20px;
+}
+.contact-section .group form{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+.contact-section .group form input,
+.contact-section .group form textarea {
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid var(--link-color);
+    background-color: transparent;
+    padding: 10px;
+    margin-bottom: 15px;
+    outline: none;
+    resize: none;
+}
+.contact-section .group form button{
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background-color: var(--link-color);
+    border: none;
+    height: 50px;
+    cursor: pointer;
+    transition: .1s;
+}
+.contact-section .group form button:hover{
+    filter: brightness(.9);
+}
+
 @media (max-width: 600px){
     /*NAVBAR*/
     nav{
@@ -172,7 +269,7 @@ nav .right a span{
     nav .right a span{
         display: none;
     }
-    /*Section 1: Profile*/
+    /*Section1: Profile*/
     .ProfileSection{
         padding: 0 20px;
     }
@@ -186,5 +283,13 @@ nav .right a span{
     .skills-section .cells .cell span{
         font-size: 16px;
 
+    }
+    /*Section3: Testimony*/
+    .testimony-section{
+        padding: 0 20px;
+    }
+    /*Section4: Contact*/
+    .contact-section{
+        padding: 0 20px;
     }
 }
