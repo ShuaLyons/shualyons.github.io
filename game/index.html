@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Paws &amp; Pastures</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="wrapper">
+    <canvas id="gameCanvas" width="480" height="270"></canvas>
+
+    <!-- START / CHARACTER SELECT SCREEN -->
+    <div id="startScreen" class="screen active">
+      <h1 class="game-title">PAWS &amp;<br>PASTURES</h1>
+      <p class="subtitle">An Irish Countryside Runner</p>
+      <p class="choose-label">CHOOSE YOUR DOG</p>
+      <div class="char-select-row">
+        <div class="char-card" id="cardLoki" data-char="loki">
+          <canvas class="portrait-canvas" width="48" height="48" data-sprite="loki"></canvas>
+          <p class="char-name">LOKI</p>
+          <p class="char-breed">Border Collie</p>
+          <p class="char-ability">✦ DOUBLE JUMP</p>
+        </div>
+        <div class="char-card" id="cardSabbath" data-char="sabbath">
+          <canvas class="portrait-canvas" width="48" height="48" data-sprite="sabbath"></canvas>
+          <p class="char-name">SABBATH</p>
+          <p class="char-breed">Belgian Malinois</p>
+          <p class="char-ability">✦ GROUND DASH</p>
+        </div>
+      </div>
+      <button id="startBtn" class="pixel-btn" disabled>SELECT A DOG</button>
+      <p class="controls-hint">SPACE / TAP to jump &nbsp;|&nbsp; ↓ / SWIPE DOWN to duck</p>
+    </div>
+
+    <!-- GAME SCREEN (HUD only) -->
+    <div id="gameScreen" class="screen">
+      <div id="hud-topleft">
+        <span id="lives-display">♥♥♥</span>
+      </div>
+      <div id="hud-topright">
+        <div id="score-display">SCORE <span id="scoreVal">000000</span></div>
+        <div id="highscore-display">BEST &nbsp;<span id="highScoreVal">000000</span></div>
+      </div>
+      <div id="hud-bottomleft">
+        <span id="powerup-display"></span>
+      </div>
+      <div id="speedup-flash" class="hidden">SPEED UP!</div>
+    </div>
+
+    <!-- GAME OVER SCREEN -->
+    <div id="gameOverScreen" class="screen">
+      <h2 class="over-title">GAME OVER</h2>
+      <p id="newHighMsg" class="new-high hidden">NEW HIGH SCORE!</p>
+      <p class="over-label">SCORE</p>
+      <p id="finalScore" class="over-score">000000</p>
+      <p class="over-label">BEST</p>
+      <p id="finalBest" class="over-score">000000</p>
+      <div class="over-buttons">
+        <button id="playAgainBtn" class="pixel-btn">PLAY AGAIN</button>
+        <button id="changeCharBtn" class="pixel-btn pixel-btn-secondary">CHANGE DOG</button>
+      </div>
+    </div>
+  </div>
+
+  <a href="../index.html" id="back-link">← BACK TO PORTFOLIO</a>
+
+  <script src="./game.js"></script>
+</body>
+</html>

@@ -121,15 +121,15 @@
       <section id="projects" class="projects-section">
       <h2>Projects</h2>
          <div class="group">
-         <!-- Project 1 -->
+         <!-- Paws & Pastures Game -->
             <div class="project-details">
-               <img src="project1.jpg" alt="Project 1">
-               <p>Project 1.</p>
-               <p>Lorem, ipsum dolor.</p>
+               <canvas id="gamePreviewCanvas" width="280" height="140" style="border-radius:8px; margin-bottom:15px; image-rendering:pixelated; width:100%; display:block;"></canvas>
+               <p>Paws &amp; Pastures</p>
+               <p>Retro pixel-art endless runner — play as Loki or Sabbath through the Irish countryside.</p>
                <div class="text">
-               "Project 1"
+                  <a href="./game/" style="display:inline-block;padding:8px 18px;background:#4a76ee;color:#fff;border-radius:5px;margin-top:10px;font-size:0.85em;text-decoration:none;">▶ Play Now</a>
                </div>
-               </div>
+            </div>
 
          <!-- Project 2 -->
             <div class="project-details">
@@ -184,6 +184,60 @@
       </section>
    </main>
     
+<script>
+// Draw pixel-art preview scene on the game card canvas
+(function(){
+  const pc = document.getElementById('gamePreviewCanvas');
+  if (!pc) return;
+  const ctx = pc.getContext('2d');
+  ctx.imageSmoothingEnabled = false;
+  const W=280,H=140,GY=105;
+  // Sky gradient
+  const g=ctx.createLinearGradient(0,0,0,GY);
+  g.addColorStop(0,'#87CEEB'); g.addColorStop(1,'#b8dfff');
+  ctx.fillStyle=g; ctx.fillRect(0,0,W,GY);
+  // Sun
+  ctx.fillStyle='#FFD700';
+  ctx.beginPath(); ctx.arc(W-35,22,10,0,Math.PI*2); ctx.fill();
+  // Distant hills
+  ctx.fillStyle='#3d7a25';
+  ctx.beginPath(); ctx.moveTo(0,GY);
+  [0,30,40,15,90,40,150,10,200,35,260,18,280,40,280,GY].forEach((v,i)=>i%2===0?ctx.lineTo(v,v):0);
+  const hp=[0,30,40,15,90,40,150,10,200,35,260,18,280,40];
+  ctx.moveTo(0,GY);
+  for(let i=0;i<hp.length;i+=2) ctx.lineTo(hp[i],hp[i+1]+65);
+  ctx.lineTo(280,GY); ctx.closePath(); ctx.fill();
+  // Ground
+  ctx.fillStyle='#4a9e2e'; ctx.fillRect(0,GY,W,H-GY);
+  ctx.fillStyle='#2d5a16'; ctx.fillRect(0,GY,W,3);
+  // Grass dashes
+  ctx.fillStyle='#5ab82a';
+  for(let x=0;x<W;x+=6) ctx.fillRect(x,GY-1,3,2);
+  // Simple dog silhouette (Loki running)
+  ctx.fillStyle='#111';
+  // body
+  ctx.fillRect(60,GY-24,22,13);
+  // head
+  ctx.fillRect(75,GY-32,14,11);
+  // ears
+  ctx.fillRect(82,GY-38,4,8); ctx.fillRect(76,GY-36,4,6);
+  // legs
+  ctx.fillRect(62,GY-12,4,12); ctx.fillRect(68,GY-12,4,10);
+  ctx.fillRect(74,GY-12,4,12); ctx.fillRect(80,GY-12,4,10);
+  // tail
+  ctx.fillRect(56,GY-30,5,5); ctx.fillRect(52,GY-35,4,7);
+  // White chest patch
+  ctx.fillStyle='#f0e0d0';
+  ctx.fillRect(62,GY-22,8,10);
+  // Title text
+  ctx.fillStyle='#f7e96b';
+  ctx.font='bold 11px monospace';
+  ctx.fillText('PAWS & PASTURES',8,14);
+  ctx.fillStyle='#aee571';
+  ctx.font='7px monospace';
+  ctx.fillText('Irish Countryside Runner',8,26);
+})();
+</script>
 </body>
 <!-- SECTION 5: Footer -->
 <footer>
