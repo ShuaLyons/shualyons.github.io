@@ -290,12 +290,12 @@ const OBS_SHEEP_FRAMES = (() => {
     r('TTTTTTTTTTTTTTTT').slice(0,16),
     r('TTTTTTTTTTTTTTTT').slice(0,16),
   ];
-  const f2=f1.map((r,i)=>{
+  const f2=f1.map((row,i)=>{
     if(i>=9&&i<=11){
       const o=[r('TTTTbTbTTTbTbTTT').slice(0,16),r('TTTbTbbTTTbbTbTT').slice(0,16),r('TTTbbbbTTTbbbbTT').slice(0,16)];
       return o[i-9];
     }
-    return r;
+    return row;
   });
   return [f1,f2];
 })();
