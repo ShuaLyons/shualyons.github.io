@@ -95,8 +95,8 @@ nav .right a span{
     justify-content: right;
 }
 .ProfileSection .headshot img{
-    width: 350px;
-    height: 350px;
+    width: 280px;
+    height: 280px;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -113,8 +113,8 @@ nav .right a span{
         flex-direction: column-reverse;
     }
     .ProfileSection .headshot img{
-        width: 300px;
-        height: 300px;
+        width: 240px;
+        height: 240px;
         
     }
     /*Section3: Projects*/
