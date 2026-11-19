@@ -1,196 +1,205 @@
-:root{
+/* ==========================================
+   COLOURS
+   Change these once and they update everywhere.
+   ========================================== */
+:root {
     --text-color: #1a1c20;
     --link-color: #4a76ee;
     --background-color: #eeeff1;
-
 }
-*{
+
+
+/* ==========================================
+   BASICS (apply to the whole page)
+   ========================================== */
+
+/* Remove the browser's default spacing */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--background-color);
     max-width: 1400px;
     margin: 0 auto;
 }
-a{
+
+a {
     color: var(--link-color);
     text-decoration: none;
 }
 
-nav{
-    display:flex;
-    justify-content: space-between;
+h2 {
+    font-size: 35px;
+}
+
+/* Every section gets the same space on the left and right */
+section {
+    padding: 0 50px;
+}
+
+
+/* ==========================================
+   BUTTONS (reused in several places)
+   ========================================== */
+
+/* Blue outlined button: profile links + footer CV link */
+.btn-outline {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 10px 10px 0; /* top, right, bottom, left */
+    border: 2px solid var(--link-color);
+    border-radius: 5px;
+    transition: 0.1s;
+}
+
+.btn-outline:hover {
+    color: var(--text-color);
+    border-color: var(--text-color);
+}
+
+/* Filled button: project "Live Demo" + "GitHub" */
+.btn {
+    display: inline-block;
+    padding: 8px 18px;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
+
+.btn-demo {
+    background: var(--link-color);
+}
+
+.btn-github {
+    background: #24292e;
+}
+
+
+/* ==========================================
+   NAVBAR
+   ========================================== */
+nav {
+    display: flex;
+    justify-content: space-between; /* name on the left, links on the right */
     align-items: center;
     padding: 0 50px;
     height: 80px;
 }
 
-nav .left a{
+nav .left a {
     color: var(--text-color);
     font-size: 22px;
     font-weight: 600;
-
 }
-nav .right a{
+
+nav .right a {
     color: var(--text-color);
     margin: 0 10px;
-    
-    
 }
-nav .right a:last-child{
+
+nav .right span {
+    margin-left: 5px;
+}
+
+/* The last link (Email) is a dark button */
+nav .right a:last-child {
     color: var(--background-color);
     background-color: var(--text-color);
     padding: 5px 15px;
     border-radius: 5px;
 }
-nav .right a span{
-    margin-left: 5px;
-}
 
-/* Section 1: Profile */
 
-.ProfileSection{
+/* ==========================================
+   SECTION 1: PROFILE
+   ========================================== */
+.profile-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px;
-    margin: 50px 0;
-    margin-bottom: 100px;
     gap: 40px;
+    margin: 50px 0 100px; /* top, left/right, bottom */
 }
-.ProfileSection .text{
-    flex: 5;
 
+.profile-section .text {
+    flex: 5; /* text takes 5 parts of the width */
 }
-.ProfileSection .text .links{
-    margin-top: 25px;
-}
-.ProfileSection .text .links a{
-    display: inline-block;
-    padding: 5px 10px;
-    border: 2px solid var(--link-color);
-    border-radius: 5px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    transition: .1s;
-}
-.ProfileSection .text .links a:hover{
-    color:var(--text-color);
-    border: 2px solid var(--text-color);
-}
-.ProfileSection .text h2{
+
+.profile-section h2 {
     font-size: 45px;
 }
-.ProfileSection .headshot{
-    flex: 2;
+
+.profile-section .links {
+    margin-top: 25px;
+}
+
+.profile-section .headshot {
+    flex: 2; /* photo takes 2 parts of the width */
     display: flex;
     justify-content: right;
 }
-.ProfileSection .headshot img{
+
+.profile-section .headshot img {
     width: 280px;
     height: 280px;
     object-fit: cover;
-    border-radius: 50%;
-}
-@media (max-width: 850px){
-    /*Section1: Profile*/
-    .ProfileSection .text h2{
-        font-size: 35px;
-    }
-
-}
-@media (max-width: 740px){
-    /*Section1: Profile*/
-    .ProfileSection{
-        flex-direction: column-reverse;
-    }
-    .ProfileSection .headshot img{
-        width: 240px;
-        height: 240px;
-        
-    }
-    /*Section3: Projects*/
-    .projects-section{
-        text-align: center;
-    }
-    .projects-section .group{
-        flex-direction: column;
-    }
-    /*Section4: Contact*/
-    .contact-section .group{
-        flex-direction: column;
-    }
-    
-    
-
+    border-radius: 50%; /* makes it a circle */
 }
 
-/*Section2: Skills*/
+
+/* ==========================================
+   SECTION 2: SKILLS
+   ========================================== */
 .skills-section {
-    padding: 0 50px;
     margin-bottom: 35px;
 }
 
-.skills-section h2{
+.skills-section h2 {
     text-align: center;
-    font-size: 35px;
 }
-.skills-section .text{
-    text-align: center;
-    margin-bottom: 20px;
-}
-.skills-section .cells{
+
+.skills-list {
     display: flex;
+    flex-wrap: wrap; /* move boxes to a new row when there's no room */
     justify-content: center;
-    flex-wrap: wrap;
 }
-.skills-section .cells .cell{
+
+.skill {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-
     width: 200px;
-    padding:10px 20px;
+    padding: 10px 20px;
     margin: 10px;
     border: 1px solid lightgray;
     border-radius: 5px;
-
-}
-.skills-section .cells .cell img{
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-    border-radius: 2px;
-}
-.skills-section .cells .cell span{
     font-size: 18px;
 }
 
 
-
-/* Section3: Projects */
+/* ==========================================
+   SECTION 3: PROJECTS
+   ========================================== */
 .projects-section {
-    padding: 0 50px;
     margin-bottom: 100px;
 }
 
 .projects-section h2 {
-    font-size: 35px;
-    margin-bottom: 30px;
     text-align: center;
+    margin-bottom: 30px;
 }
 
-/* Grid container */
-.projects-section .group {
+/* 3 cards side by side */
+.projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
@@ -198,83 +207,74 @@ nav .right a span{
     margin: 0 auto;
 }
 
-/* Individual project card */
-.projects-section .group .project-details {
-    background: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.project-card {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.projects-section .group .project-details img {
+.project-card img {
     width: 100%;
     max-width: 200px;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 1; /* square */
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 15px;
 }
 
-.projects-section .group .project-details p:first-of-type {
+.project-title {
     font-weight: 600;
     font-size: 1.2rem;
     margin-bottom: 5px;
 }
 
-.projects-section .group .project-details p:last-of-type {
+.project-description {
     color: #666;
     font-size: 0.9rem;
     margin-bottom: 10px;
 }
 
-.projects-section .group .text {
-    margin-top: auto;
-    font-size: 0.9rem;
-    color: #444;
-    text-align: left;
+.project-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto; /* pushes buttons to the bottom of the card */
+    padding-top: 10px;
 }
 
-/* Responsive breakpoints */
-@media (max-width: 900px) {
-    .projects-section .group {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-@media (max-width: 600px) {
-    .projects-section .group {
-        grid-template-columns: 1fr;
-    }
-}
-/*Section4: Contact*/
-.contact-section{
-    padding: 0 50px;
+/* ==========================================
+   SECTION 4: CONTACT
+   ========================================== */
+.contact-section {
     margin-bottom: 100px;
 }
-.contact-section h2{
-    font-size: 35px;
-}
-.contact-section .group{
+
+/* Text on the left, form on the right */
+.contact-content {
     display: flex;
     gap: 50px;
 }
 
-.contact-section .group .text{
-    flex: 3;
+.contact-content .text {
+    flex: 1;
     margin-top: 20px;
 }
-.contact-section .group form{
-    flex: 3;
+
+.contact-content form {
+    flex: 1;
     display: flex;
     flex-direction: column;
 }
-.contact-section .group form input,
-.contact-section .group form textarea {
-    font-family: 'Poppins', sans-serif;
+
+.contact-content input,
+.contact-content textarea {
+    font-family: inherit;
     border: 2px solid var(--link-color);
     background-color: transparent;
     padding: 10px;
@@ -282,89 +282,98 @@ nav .right a span{
     outline: none;
     resize: none;
 }
-.contact-section .group form button{
+
+.contact-content button {
+    font-family: inherit;
     font-size: 16px;
-    font-family: 'Poppins', sans-serif;
     color: #fff;
     background-color: var(--link-color);
     border: none;
     height: 50px;
     cursor: pointer;
-    transition: .1s;
-}
-.contact-section .group form button:hover{
-    filter: brightness(.9);
-}
-footer{
-    align-items: center;
+    transition: 0.1s;
 }
 
-@media (max-width: 600px){
-    /*NAVBAR*/
-    nav{
+.contact-content button:hover {
+    filter: brightness(0.9); /* slightly darker */
+}
+
+
+/* ==========================================
+   SECTION 5: FOOTER
+   ========================================== */
+footer {
+    padding: 30px 50px;
+    margin-top: 50px;
+    border-top: 1px solid lightgray;
+    text-align: center;
+}
+
+
+/* ==========================================
+   SMALLER SCREENS
+   Each block below only applies when the
+   screen is narrower than the number shown.
+   ========================================== */
+
+/* Tablets */
+@media (max-width: 900px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    }
+}
+
+@media (max-width: 850px) {
+    .profile-section h2 {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 740px) {
+    /* Photo on top, text underneath */
+    .profile-section {
+        flex-direction: column-reverse;
+    }
+    .profile-section .headshot img {
+        width: 240px;
+        height: 240px;
+    }
+
+    /* Contact text above the form */
+    .contact-content {
+        flex-direction: column;
+    }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+    nav,
+    section {
         padding: 0 20px;
     }
+
+    /* Navbar: show icons only */
     nav .right a {
         font-size: 22px;
+    }
+    nav .right span {
+        display: none;
     }
     nav .right a:last-child {
         color: var(--text-color);
         background-color: transparent;
         padding: 0;
     }
-    nav .right a span{
-        display: none;
-    }
-    /*Section1: Profile*/
-    .ProfileSection{
-        padding: 0 20px;
-    }
-    .ProfileSection .text h2{
+
+    .profile-section h2 {
         font-size: 30px;
     }
-    /*Section2: Skills*/
-    .skills-section{
-        padding: 0 20px;
-    }
-    .skills-section .cells .cell span{
+
+    .skill {
         font-size: 16px;
-
     }
-    /*Section3: Testimony*/
-    .testimony-section{
-        padding: 0 20px;
-    }
-    /*Section4: Contact*/
-    .contact-section{
-        padding: 0 20px;
-    }
-}
 
-footer {
-    padding: 30px 50px;
-    text-align: center;
-    border-top: 1px solid lightgray;
-    margin-top: 50px;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-size: 16px;
-    
-}
-/*Section5: Footer*/
-footer a {
-    color: var(--link-color);
-    text-decoration: none;
-    display: inline-block;
-    margin: 0 10px 10px 0; /* top, right, bottom, left */
-    padding: 5px 10px;
-    border: 2px solid var(--link-color);
-    border-radius: 5px;
-    transition: color 0.1s, border-color 0.1s, background-color 0.1s;
-}
-
-footer a:hover {
-    
-    color:var(--text-color);
-    border: 2px solid var(--text-color);
-    background-color: var(--background-color);
+    .projects-grid {
+        grid-template-columns: 1fr; /* 1 card per row */
+    }
 }

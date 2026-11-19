@@ -4,26 +4,31 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>JoshuaLyonsPortfolio</title>
-    
+
+   <!-- Font: Poppins (from Google Fonts) -->
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+   <!-- Icons: Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
+   <!-- My styles -->
    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+
+   <!-- NAVBAR -->
    <nav>
       <div class="left">
          <a href="/">Joshua Lyons - QA Engineer/Software Tester</a>
       </div>
       <div class="right">
-         <a href="http://github.com/shualyons" target="_blank" rel="noopener noreferrer">
+         <a href="http://github.com/shualyons" target="_blank">
             <i class="fa-brands fa-github"></i>
             <span>Github</span>
          </a>
-         <a href="http://linkedin.com/in/shualyons" target="_blank" rel="noopener noreferrer">
+         <a href="http://linkedin.com/in/shualyons" target="_blank">
             <i class="fa-brands fa-linkedin"></i>
             <span>LinkedIn</span>
          </a>
@@ -36,140 +41,86 @@
 
    <main>
       <!-- SECTION 1: Profile -->
-      <section class="ProfileSection">
+      <section class="profile-section">
          <div class="text">
-            <h2>Hi, I'm Joshua! 👾 </h2>
+            <h2>Hi, I'm Joshua! 👾</h2>
             <p>As an enthusiastic and versatile professional with a passion for Quality Assurance (QA), programming, and video game development, I am driven by the challenge of creating high-quality, engaging software experiences. My journey in software development has led me to explore both the technical and creative aspects of building robust applications, with a particular focus on ensuring that products are polished, bug-free, and optimized for performance.</p>
+
             <div class="links">
-               <a href="#skills">
-                  <i class="fa-solid fa-code"></i>
-                  <span>Skills</span>
-               </a>
-               <a href="#projects">
-                  <i class="fa-solid fa-pen"></i>
-                  <span>Projects</span>
-               </a>
-               <a href="#contact">
-                  <i class="fa-solid fa-envelope"></i>
-                  <span>Contact</span>
-               </a>
+               <a class="btn-outline" href="#skills"><i class="fa-solid fa-code"></i> Skills</a>
+               <a class="btn-outline" href="#projects"><i class="fa-solid fa-pen"></i> Projects</a>
+               <a class="btn-outline" href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
             </div>
          </div>
+
          <div class="headshot">
-            <img src="./assets/images/JoshuaLyonsHeadShot.jpg" alt="ProfileHeadShot">
+            <img src="./assets/images/JoshuaLyonsHeadShot.jpg" alt="Photo of Joshua Lyons">
          </div>
       </section>
 
       <!-- SECTION 2: Skills -->
       <section id="skills" class="skills-section">
          <h2>Skills</h2>
-         <div class="skills">
-            
-         </div>
-      
-
-         <div class="cells">
-            <div class="cell">
-               <i class="fa-brands fa-python"></i>
-               <span>Python</span>
-            </div>
-
-            <div class="cell">
-               <i class="fa-brands fa-js"></i>
-               <span>JavaScript</span>
-            </div>
-
-            <div class="cell">
-               <i class="fa-brands fa-html5"></i>
-               <span>HTML</span>
-            </div>
-
-            <div class="cell">
-               <i class="fa-brands fa-css3-alt"></i>
-               <span>CSS</span>
-            </div>
-
-            <div class="cell">
-               <i class="fa-solid fa-code"></i>
-               <span>PostgreSQL</span>
-            </div>
-
-            <div class="cell">
-               <i class="fa-brands fa-git"></i>
-               <span>Git/Github</span>
-            </div>
-
-            <div class="cell">
-               <i class="fa-brands fa-jira"></i>
-               <span>Jira</span>
-            </div>
-
-            <div class="cell">
-               <i class="fa-solid fa-code"></i>
-               <span>TestRail</span>
-            </div>
-
-            <div class="cell">
-               <i class="fa-brands fa-confluence"></i>
-               <span>Confluence</span>
-            </div>
+         <div class="skills-list">
+            <div class="skill"><i class="fa-brands fa-python"></i> <span>Python</span></div>
+            <div class="skill"><i class="fa-brands fa-js"></i> <span>JavaScript</span></div>
+            <div class="skill"><i class="fa-brands fa-html5"></i> <span>HTML</span></div>
+            <div class="skill"><i class="fa-brands fa-css3-alt"></i> <span>CSS</span></div>
+            <div class="skill"><i class="fa-solid fa-code"></i> <span>PostgreSQL</span></div>
+            <div class="skill"><i class="fa-brands fa-git"></i> <span>Git/Github</span></div>
+            <div class="skill"><i class="fa-brands fa-jira"></i> <span>Jira</span></div>
+            <div class="skill"><i class="fa-solid fa-code"></i> <span>TestRail</span></div>
+            <div class="skill"><i class="fa-brands fa-confluence"></i> <span>Confluence</span></div>
          </div>
       </section>
-
 
       <!-- SECTION 3: Projects -->
       <section id="projects" class="projects-section">
-      <h2>Projects</h2>
-         <div class="group">
-         <!-- Project 1: FM Save Editor -->
-            <div class="project-details">
-               <img src="./assets/images/fm-save-editor-preview.jpg" alt="FM Save Editor screenshot" style="width:100%;border-radius:8px;margin-bottom:15px;display:block;">
-               <p>FM Save Editor</p>
-               <p>A web-based save file editor for Yu-Gi-Oh! Forbidden Memories - modify your deck, cards, and progress directly in the browser.</p>
-               <div class="text" style="display:flex;gap:8px;flex-wrap:wrap;">
-                  <a href="https://shualyons.github.io/fm-save-editor/" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:8px 18px;background:#4a76ee;color:#fff;border-radius:5px;margin-top:10px;font-size:0.85em;text-decoration:none;">▶ Live Demo</a>
-                  <a href="https://github.com/ShuaLyons/fm-save-editor" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:8px 18px;background:#24292e;color:#fff;border-radius:5px;margin-top:10px;font-size:0.85em;text-decoration:none;"><i class="fa-brands fa-github"></i> GitHub</a>
+         <h2>Projects</h2>
+         <div class="projects-grid">
+
+            <!-- Project 1: FM Save Editor -->
+            <div class="project-card">
+               <img src="./assets/images/fm-save-editor-preview.jpg" alt="FM Save Editor screenshot">
+               <p class="project-title">FM Save Editor</p>
+               <p class="project-description">A web-based save file editor for Yu-Gi-Oh! Forbidden Memories - modify your deck, cards, and progress directly in the browser.</p>
+               <div class="project-buttons">
+                  <a class="btn btn-demo" href="https://shualyons.github.io/fm-save-editor/" target="_blank">▶ Live Demo</a>
+                  <a class="btn btn-github" href="https://github.com/ShuaLyons/fm-save-editor" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
                </div>
             </div>
 
-         <!-- Project 2: THPS2 Save Editor -->
-            <div class="project-details">
-               <img src="./assets/images/thps2-save-editor-preview.jpg" alt="THPS2 Save Editor screenshot" style="width:100%;border-radius:8px;margin-bottom:15px;display:block;">
-               <p>THPS2 Save Editor</p>
-               <p>A browser-based save editor for Tony Hawk's Pro Skater 2 on PS1 (US &amp; EU) - edit cash, stats, goals, medals, gaps, cheats and unlocks on your memory card.</p>
-               <div class="text" style="display:flex;gap:8px;flex-wrap:wrap;">
-                  <a href="https://shualyons.github.io/thps2-save-editor/" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:8px 18px;background:#4a76ee;color:#fff;border-radius:5px;margin-top:10px;font-size:0.85em;text-decoration:none;">▶ Live Demo</a>
-                  <a href="https://github.com/ShuaLyons/thps2-save-editor" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:8px 18px;background:#24292e;color:#fff;border-radius:5px;margin-top:10px;font-size:0.85em;text-decoration:none;"><i class="fa-brands fa-github"></i> GitHub</a>
+            <!-- Project 2: THPS2 Save Editor -->
+            <div class="project-card">
+               <img src="./assets/images/thps2-save-editor-preview.jpg" alt="THPS2 Save Editor screenshot">
+               <p class="project-title">THPS2 Save Editor</p>
+               <p class="project-description">A browser-based save editor for Tony Hawk's Pro Skater 2 on PS1 (US &amp; EU) - edit cash, stats, goals, medals, gaps, cheats and unlocks on your memory card.</p>
+               <div class="project-buttons">
+                  <a class="btn btn-demo" href="https://shualyons.github.io/thps2-save-editor/" target="_blank">▶ Live Demo</a>
+                  <a class="btn btn-github" href="https://github.com/ShuaLyons/thps2-save-editor" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
                </div>
             </div>
 
-         <!-- Project 3 -->
-         <div class="project-details">
-         <img src="project3.jpg" alt="Project 3">
-         <p>Project 3</p>
-         <p>Lorem, ipsum dolor.</p>
-         <div class="text">
-         "Project 3."
-         </div>
-         </div>
+            <!-- Project 3: placeholder (copy a card above when ready) -->
+            <div class="project-card">
+               <img src="project3.jpg" alt="Project 3">
+               <p class="project-title">Project 3</p>
+               <p class="project-description">Coming soon.</p>
+            </div>
+
          </div>
       </section>
-
-
 
       <!-- SECTION 4: Contact -->
       <section id="contact" class="contact-section">
          <h2>Contact</h2>
-         <div class="group">
+         <div class="contact-content">
             <div class="text">
-               Let's Connect!
-               <br>
-               I'm currently open to new opportunities and collaborations.  
-               <br>  
-               📍 Based in London, United Kingdom
-               <br>
-
+               <p>Let's Connect!</p>
+               <p>I'm currently open to new opportunities and collaborations.</p>
+               <p>📍 Based in London, United Kingdom</p>
             </div>
+
             <form>
                <label for="name">Name</label>
                <input type="text" id="name">
@@ -185,10 +136,11 @@
          </div>
       </section>
    </main>
-    
+
+   <!-- SECTION 5: Footer -->
+   <footer>
+      <a class="btn-outline" href="./public/JoshuaLyonsCV.pdf" target="_blank">Resume/CV</a>
+   </footer>
+
 </body>
-<!-- SECTION 5: Footer -->
-<footer>
-   <a href="./public/JoshuaLyonsCV.pdf" target="_blank">Resume/CV</a>
-</footer>
 </html>
